@@ -5,8 +5,11 @@ var os = require('os');
 
 // Configure our HTTP server to respond with Hello World to all requests.
 var server = http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Hello World this is a test for Brendan & Other people!\n");
+  response.writeHead(200, {"Content-Type": "text/html"});
+  response.end("<body>" +
+              "Hello World this is a test for Brendan & Other people!" +
+               "<br>Served by: \n" + os.hostname() + 
+               "</body>");
   console.log("Request Handled: " + request.url);
 });
 
