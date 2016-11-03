@@ -1,0 +1,33 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "simple-node",
+        "namespace": "default",
+        "selfLink": "/api/v1/namespaces/default/services/simple-node",
+        "uid": "7522be49-a1fb-11e6-b6f8-000d3a33ac16",
+        "resourceVersion": "103282",
+        "creationTimestamp": "2016-11-03T19:26:45Z",
+        "labels": {
+            "run": "simple-node"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 8000,
+                "targetPort": 8000
+            }
+        ],
+        "selector": {
+            "run": "simple-node"
+        },
+        "clusterIP": "10.0.153.33",
+        "type": "LoadBalancer",
+        "sessionAffinity": "None"
+    },
+    "status": {
+        "loadBalancer": {}
+    }
+}
