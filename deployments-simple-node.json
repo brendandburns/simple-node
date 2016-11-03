@@ -1,0 +1,63 @@
+{
+    "kind": "Deployment",
+    "apiVersion": "extensions/v1beta1",
+    "metadata": {
+        "name": "simple-node",
+        "namespace": "default",
+        "selfLink": "/apis/extensions/v1beta1/namespaces/default/deployments/simple-node",
+        "uid": "74dffe22-a17f-11e6-b6f8-000d3a33ac16",
+        "resourceVersion": "7386",
+        "generation": 2,
+        "creationTimestamp": "2016-11-03T04:39:07Z",
+        "labels": {
+            "run": "simple-node"
+        },
+        "annotations": {
+            "deployment.kubernetes.io/revision": "1"
+        }
+    },
+    "spec": {
+        "replicas": 3,
+        "selector": {
+            "matchLabels": {
+                "run": "simple-node"
+            }
+        },
+        "template": {
+            "metadata": {
+                "creationTimestamp": null,
+                "labels": {
+                    "run": "simple-node"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "name": "simple-node",
+                        "image": "brendanburns/simple-node:42e6e53",
+                        "resources": {},
+                        "terminationMessagePath": "/dev/termination-log",
+                        "imagePullPolicy": "IfNotPresent"
+                    }
+                ],
+                "restartPolicy": "Always",
+                "terminationGracePeriodSeconds": 30,
+                "dnsPolicy": "ClusterFirst",
+                "securityContext": {}
+            }
+        },
+        "strategy": {
+            "type": "RollingUpdate",
+            "rollingUpdate": {
+                "maxUnavailable": 1,
+                "maxSurge": 1
+            }
+        }
+    },
+    "status": {
+        "observedGeneration": 2,
+        "replicas": 1,
+        "updatedReplicas": 1,
+        "availableReplicas": 1
+    }
+}
