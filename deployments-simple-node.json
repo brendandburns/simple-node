@@ -6,7 +6,6 @@
         "namespace": "default",
         "selfLink": "/apis/extensions/v1beta1/namespaces/default/deployments/simple-node",
         "uid": "95ae2990-a387-11e6-8f4a-000d3a32325b",
-        "resourceVersion": "2186",
         "generation": 2,
         "creationTimestamp": "2016-11-05T18:42:20Z",
         "labels": {
@@ -34,7 +33,7 @@
                 "containers": [
                     {
                         "name": "simple-node",
-                        "image": "brendanburns/simple-node:206c506",
+                        "image": "brendanburns/simple-node:ac8e217",
                         "resources": {},
                         "terminationMessagePath": "/dev/termination-log",
                         "imagePullPolicy": "IfNotPresent"
