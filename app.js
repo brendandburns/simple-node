@@ -10,5 +10,5 @@ var srv = http.createServer(function (request, response) {
   console.log("Request Handled: " + request.url);
 });
 
-server.listen(8000);
+srv.listen(8000);
 console.log("Server running at http://" + os.hostname() + ":8000/");
